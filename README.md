@@ -99,7 +99,7 @@ mortalidad-colombia-2019/
 
 ```bash
 # 1. Clonar el repositorio
-git clone https://github.com/USUARIO/mortalidad-colombia-2019.git
+git clone https://github.com/njgarzon/mortalidad-colombia-2019.git
 cd mortalidad-colombia-2019
 
 # 2. Crear y activar un entorno virtual
