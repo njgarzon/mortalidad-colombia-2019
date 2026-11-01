@@ -6,6 +6,7 @@ Actividad 4 : Aplicación web interactiva para el análisis de mortalidad en Col
 
 **Integrantes:**
 - Nelson Javier Garzón Gámez
+- Jaher Yoel Manrique Rojas
 
 **Aplicación desplegada:** _[https://mortalidad-colombia-2019-44ys.onrender.com](https://mortalidad-colombia-2019-44ys.onrender.com)_
 
