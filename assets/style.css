@@ -1,0 +1,103 @@
+:root {
+  --pagina: #f9f9f7;
+  --superficie: #fcfcfb;
+  --tinta: #0b0b0b;
+  --tinta-2: #52514e;
+  --tenue: #898781;
+  --linea: #e1e0d9;
+  --borde: rgba(11, 11, 11, 0.10);
+  --acento: #2a78d6;
+  --fuente: system-ui, -apple-system, "Segoe UI", Roboto, sans-serif;
+}
+
+* { box-sizing: border-box; }
+
+body {
+  margin: 0;
+  background: var(--pagina);
+  color: var(--tinta);
+  font-family: var(--fuente);
+  -webkit-font-smoothing: antialiased;
+}
+
+.pagina { max-width: 1320px; margin: 0 auto; padding: 32px 24px 48px; }
+
+/* Encabezado */
+.encabezado { margin-bottom: 24px; }
+.supra {
+  margin: 0 0 6px; font-size: 13px; letter-spacing: .04em; text-transform: uppercase;
+  color: var(--tenue); font-weight: 600;
+}
+.encabezado h1 { margin: 0 0 8px; font-size: 34px; line-height: 1.15; letter-spacing: -.01em; }
+.bajada { margin: 0; max-width: 760px; color: var(--tinta-2); font-size: 16px; line-height: 1.5; }
+
+/* Filtros */
+.filtros {
+  position: sticky; top: 0; z-index: 20;
+  display: flex; flex-wrap: wrap; align-items: flex-end; gap: 16px 24px;
+  padding: 14px 18px; margin-bottom: 20px;
+  background: rgba(252, 252, 251, .95); backdrop-filter: blur(6px);
+  border: 1px solid var(--borde); border-radius: 12px;
+}
+.filtro { display: flex; flex-direction: column; gap: 6px; }
+.filtro:first-child { min-width: 280px; }
+.filtro label { font-size: 12px; font-weight: 600; color: var(--tinta-2); text-transform: uppercase; letter-spacing: .04em; }
+
+.segmentado { display: inline-flex; flex-wrap: wrap; gap: 4px; background: #f0efec; padding: 3px; border-radius: 8px; }
+.segmentado label {
+  display: inline-flex !important; align-items: center; margin: 0 !important;
+  padding: 6px 12px; border-radius: 6px; cursor: pointer;
+  font-size: 14px; color: var(--tinta-2) !important; text-transform: none; letter-spacing: 0; font-weight: 500;
+}
+.segmentado input { position: absolute; opacity: 0; pointer-events: none; }
+.segmentado label:has(input:checked) { background: var(--superficie); color: var(--tinta) !important; box-shadow: 0 1px 2px rgba(0,0,0,.12); }
+.segmentado label:has(input:focus-visible) { outline: 2px solid var(--acento); outline-offset: 1px; }
+.segmentado.chico { margin: 2px 0 10px; }
+.segmentado.chico label { font-size: 13px; padding: 5px 10px; }
+
+.boton {
+  margin-left: auto; padding: 8px 14px; border-radius: 8px; cursor: pointer;
+  background: transparent; border: 1px solid #c3c2b7; color: var(--tinta-2);
+  font: 500 14px var(--fuente);
+}
+.boton:hover { background: #f0efec; color: var(--tinta); }
+
+/* KPIs */
+.kpis { display: grid; grid-template-columns: repeat(4, 1fr); gap: 16px; margin-bottom: 20px; }
+.kpi {
+  display: flex; flex-direction: column; gap: 4px; padding: 16px 18px;
+  background: var(--superficie); border: 1px solid var(--borde); border-radius: 12px;
+}
+.kpi-valor { font-size: 28px; font-weight: 650; color: var(--tinta); line-height: 1.15; }
+.kpi:last-child .kpi-valor { font-size: 17px; font-weight: 600; line-height: 1.3; }
+.kpi-etiqueta { font-size: 13px; color: var(--tinta-2); }
+
+/* Rejilla de tarjetas */
+.rejilla { display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 20px; }
+.tarjeta {
+  background: var(--superficie); border: 1px solid var(--borde); border-radius: 12px;
+  padding: 18px 18px 12px; min-width: 0;
+}
+.tarjeta.ancho { grid-column: 1 / -1; }
+.tarjeta-cabecera { margin-bottom: 8px; }
+.tarjeta h2 { margin: 0 0 4px; font-size: 18px; font-weight: 650; }
+.descripcion { margin: 0; font-size: 14px; color: var(--tinta-2); line-height: 1.45; }
+.ambito {
+  display: inline-block; margin-top: 8px; padding: 2px 8px; border-radius: 999px;
+  background: #e9f1fc; color: #1c5cab; font-size: 12px; font-weight: 600;
+}
+.nota { margin: 4px 0 0; font-size: 12px; color: var(--tenue); }
+
+.pie { margin-top: 32px; font-size: 13px; color: var(--tenue); line-height: 1.5; }
+
+@media (max-width: 900px) {
+  .rejilla { grid-template-columns: 1fr; }
+  .kpis { grid-template-columns: repeat(2, 1fr); }
+  .encabezado h1 { font-size: 26px; }
+  .boton { margin-left: 0; }
+}
+@media (max-width: 520px) {
+  .pagina { padding: 20px 12px 32px; }
+  .kpis { grid-template-columns: 1fr; }
+  .filtro:first-child { min-width: 100%; }
+}
