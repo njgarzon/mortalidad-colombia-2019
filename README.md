@@ -1,7 +1,7 @@
 # Mortalidad en Colombia 2019 — Aplicación web interactiva con Dash
 
 **Maestría en Inteligencia Artificial · Aplicaciones I · Universidad de La Salle**
-Actividad 4 (grupal): Aplicación web interactiva para el análisis de mortalidad en Colombia.
+Actividad 4 : Aplicación web interactiva para el análisis de mortalidad en Colombia.
 
 **Integrantes:**
 - Nelson Javier Garzón Gámez
